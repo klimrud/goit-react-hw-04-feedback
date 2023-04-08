@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from 'components/Feedback//Section.module.css'
+import css from 'components/Section/Section.module.css'
 
 export const Section = ({ title, children }) => {
-  // console.log('hi');
+ console.log('hi');
   return (
     <section className={css.container}>
       <h2 className={css.title}>{title}</h2>

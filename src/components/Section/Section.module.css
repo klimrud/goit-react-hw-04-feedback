@@ -1,7 +1,7 @@
  .containers{
   display: flex;
   margin: 0 auto;
-  width: 300px;
+  width: 400px;
   border: 20px solid #e3e3e3;
   background: #eff6ff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
