@@ -5,12 +5,14 @@ button{
   padding: 5px;
   margin-left: 20px;
   font-size: 20px;
+  text-transform: capitalize;
   border-radius: 8px;
   background-color:#1e3a8a;
   color: white;
   border: 1px solid #1e3a8a;
   transition: transform  250ms linear;
 }
+
 
 button:hover,
 button:focus {
@@ -27,9 +29,19 @@ button:focus {
   margin: 0 auto;
 padding-bottom: 50px;
 border-bottom: 2px solid #4e545c;
-display: flex;
-align-content: space-around;
-justify-content: center;
+margin-top: 0;
+margin-bottom: 20;
+padding-left: 0;
+}
+
+.buttonWrapper {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  display: flex;
+  gap: 6px;
 }
 
 .btnGreen:hover,

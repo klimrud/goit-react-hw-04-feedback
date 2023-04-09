@@ -1,56 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { reviews } from './reviews';
-import css from 'components/Feedback/FeedbackOptions.module.css';
 
-export const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
- 
+import css from './FeedbackOptions.module.css';
+
+export const FeedbackOptions = ({ options = [], onLeaveFeedback }) => {
   return (
     <div className={css['container-btn']}>
-      {/* <ul>
-        {reviews.map((review) => (
-          <li key={review.toString()}>
-          <button
-        className={css.btnBlue}
-        type="button"
-        onClick={() => onLeaveFeedback(name)}
-      >{name}
-        Neutral
-      </button>
+      <ul className={css.buttonWrapper}>
+        {options.map(option => (
+          <li key={option}>
+            <button
+              className={`${css.button} ${
+                option === 'good' ? css.btnGreen : ''
+              } ${option === 'neutral' ? css.btnBlue : ''} ${
+                option === 'bad' ? css.btnRed : ''
+              }`}
+              type="button"
+              onClick={() => onLeaveFeedback(option)}
+            >
+              {option}
+            </button>
           </li>
         ))}
-      </ul> */}
-
-      <button
-        className={css.btnGreen}
-        type="button"
-        onClick={() => onGood(reviews.good)}
-        // onClick={() => onLeaveFeedback(reviews.good)}
-      >
-        Good
-      </button>
-      <button
-        className={css.btnBlue}
-        type="button"
-        onClick={() => onNeutral(reviews.neutral)}
-      >
-        Neutral
-      </button>
-      <button
-        className={css.btnRed}
-        type="button"
-        onClick={() => onBad(reviews.bad)}
-      >
-        Bad
-      </button>
+      </ul>
     </div>
   );
 };
 
 FeedbackOptions.propTypes = {
-  // onLeaveFeedback: PropTypes.func.isRequired,
-  onGood: PropTypes.func.isRequired,
-  onNeutral: PropTypes.func.isRequired,
-  onBad: PropTypes.func.isRequired,
-
+  options: PropTypes.arrayOf(PropTypes.string),
 };

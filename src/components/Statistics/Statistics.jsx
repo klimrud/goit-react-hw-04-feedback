@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes, { number } from 'prop-types';
-import css from 'components/Statistics/Statistics.module.css';
+import css from './Statistics.module.css';
 
 export const Statistics = ({
   good,
@@ -9,12 +9,7 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => {
-  console.log('good', good);
-  console.log('neutral', neutral);
-  console.log('bad', bad);
-console.log('total', total);
-console.log('positivePercentage', positivePercentage)
-
+  
   return (
     <div className={css.statistics}>
       {/* <h2>Statistics</h2> */}
