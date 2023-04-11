@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 import { FeedbackOptions } from '../Feedback/FeedbackOptions.jsx';
-// import { Notification } from '../Notification/Notification.jsx';
+import { Notification } from '../Notification/Notification.jsx';
 import { Section } from '../Section/Section.jsx';
 import { Statistics } from '../Statistics/Statistics.jsx';
-
 
 import { Toaster } from 'react-hot-toast';
 
@@ -60,7 +59,7 @@ export const App = () => {
             />
           </Section>
           {!countTotalFeedback() ? (
-            <h3>No feedback given</h3>
+            <Notification /> && <h3>No feedback given</h3>
           ) : (
             <Section className={css.title} title="Statistics">
               <Statistics
@@ -74,7 +73,7 @@ export const App = () => {
           )}
         </Section>
       </div>
-      {/* <Notification message="There is no feedback" /> */}
+
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -83,7 +82,7 @@ export const App = () => {
         containerStyle={{}}
         toastOptions={{
           className: '',
-          duration: 10000,
+          duration: 3000,
           style: {
             background: 'green',
             color: '#fff',
